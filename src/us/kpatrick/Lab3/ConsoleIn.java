@@ -13,7 +13,7 @@ public class ConsoleIn implements InputMessage {
     public void InputMessage(){
         System.out.println("What Message do you want in: ");
         this.message = in.nextLine();
-        in.nextLine();
+
     }
 
     public String GetMessage() {

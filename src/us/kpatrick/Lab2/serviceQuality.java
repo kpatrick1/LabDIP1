@@ -1,12 +1,12 @@
 package us.kpatrick.Lab2;
 
-public enum ServiceQuality {
+public enum serviceQuality {
     GOOD,
     FAIR,
     POOR;
 
 
-    public static double GetRate(ServiceQuality rate) {
+    public static double getRate(serviceQuality rate) {
         double rateAmt = 0;
         switch (rate) {
             case GOOD:

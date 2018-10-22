@@ -13,11 +13,11 @@ public class FoodServiceTipCalculator implements TipCalculator {
     private static final String BILL_ENTRY_ERR = "Error: bill must be greater than or equal to " + MIN_BILL;
     private double bill;
 
-    private ServiceQuality serviceQuality;
+    private us.kpatrick.Lab2.serviceQuality serviceQuality;
 
-    public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
-        this.SetServiceRating(q);
-        this.SetBill(billAmt);
+    public FoodServiceTipCalculator(us.kpatrick.Lab2.serviceQuality q, double billAmt) {
+        this.setServiceRating(q);
+        this.setBill(billAmt);
     }
 
     public double getTip() {
@@ -25,32 +25,32 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
         switch(serviceQuality) {
             case GOOD:
-                tip = bill * ServiceQuality.GetRate(ServiceQuality.GOOD);
+                tip = bill * us.kpatrick.Lab2.serviceQuality.getRate(us.kpatrick.Lab2.serviceQuality.GOOD);
                 break;
             case FAIR:
-                tip = bill * ServiceQuality.GetRate(ServiceQuality.FAIR);
+                tip = bill * us.kpatrick.Lab2.serviceQuality.getRate(us.kpatrick.Lab2.serviceQuality.FAIR);
                 break;
             case POOR:
-                tip = bill * ServiceQuality.GetRate(ServiceQuality.POOR);
+                tip = bill * us.kpatrick.Lab2.serviceQuality.getRate(us.kpatrick.Lab2.serviceQuality.POOR);
                 break;
         }
 
         return tip;
     }
 
-    public void SetBill(double billAmt) {
+    public void setBill(double billAmt) {
         if(billAmt < MIN_BILL) {
             throw new IllegalArgumentException(BILL_ENTRY_ERR);
         }
         bill = billAmt;
     }
 
-    public void SetServiceRating(ServiceQuality q) {
+    public void setServiceRating(us.kpatrick.Lab2.serviceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    public serviceQuality getServiceQuality() {
         return serviceQuality;
     }
 

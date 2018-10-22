@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args){
 
 
-        HourlyEmployee emp1 = new HourlyEmployee(15.50, 2020);
-        SalariedEmployee emp2 = new SalariedEmployee(75000, 7500);
-        SalariedEmployee emp3 = new SalariedEmployee(125000,0);
+        hourlyEmployee emp1 = new hourlyEmployee(15.50, 2020);
+        salariedEmployee emp2 = new salariedEmployee(75000, 7500);
+        salariedEmployee emp3 = new salariedEmployee(125000,0);
 
         HRService hr = new HRService();
 

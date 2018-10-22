@@ -18,9 +18,9 @@ public class BaggageServiceTipCalculator implements TipCalculator{
     private double baseTipPerBag;
     private int bagCount;
 
-    private ServiceQuality serviceQuality;
+    private us.kpatrick.Lab2.serviceQuality serviceQuality;
 
-    public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
+    public BaggageServiceTipCalculator(us.kpatrick.Lab2.serviceQuality q, int bags) {
         this.setServiceRating(q); // perform validation
         this.setBagCount(bags);
 
@@ -32,24 +32,24 @@ public class BaggageServiceTipCalculator implements TipCalculator{
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + ServiceQuality.GetRate(ServiceQuality.GOOD));
+                tip = baseTipPerBag * bagCount * (1 + us.kpatrick.Lab2.serviceQuality.getRate(us.kpatrick.Lab2.serviceQuality.GOOD));
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + ServiceQuality.GetRate(ServiceQuality.FAIR));
+                tip = baseTipPerBag * bagCount * (1 + us.kpatrick.Lab2.serviceQuality.getRate(us.kpatrick.Lab2.serviceQuality.FAIR));
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + ServiceQuality.GetRate(ServiceQuality.POOR));
+                tip = baseTipPerBag * bagCount * (1 + us.kpatrick.Lab2.serviceQuality.getRate(us.kpatrick.Lab2.serviceQuality.POOR));
                 break;
         }
         return tip;
     }
 
-    public final void setServiceRating(ServiceQuality q) {
+    public final void setServiceRating(us.kpatrick.Lab2.serviceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    public us.kpatrick.Lab2.serviceQuality getServiceQuality() {
         return serviceQuality;
     }
 
